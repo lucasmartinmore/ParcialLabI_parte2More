@@ -16,11 +16,12 @@ int MenuPrincipal()
     printf("|  6) SALDAR RECAUD  |\n");
     printf("|  7) IMP CONTRIB    |\n");
     printf("|  8) IMP RECAUD     |\n");
+    printf("|  9) INFORMES       |\n");
     printf("|--------------------|\n\n");
     printf("----------------------\n");
     printf("   Ingrese opcion: ");
     scanf("%d", &opcion);
-    while(opcion<1 || opcion>8)
+    while(opcion<1 || opcion>9)
     {
         printf("Reingrese opcion: ");
         scanf("%d", &opcion);

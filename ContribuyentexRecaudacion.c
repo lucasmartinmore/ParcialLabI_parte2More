@@ -360,3 +360,118 @@ int mostrarRecaudacionesSaldadas(eRecaudacion recaudacion[], int tamRecaudacion,
     }
     return error;
 }
+
+int mostrarRecaudacionesFinanciar(eRecaudacion recaudacion[], int tamRecaudacion, eContribuyente contribuyente[], int tamContribuyente)
+{
+    int error=-1;
+    int flagMaximoImporteRefinanciar=0;
+    printf("ID-REC   ID-CONTR    MES      TIPO        IMPORT    ESTADO    NOMBRE    APELLIDO    CUIL\n");
+    if(recaudacion!=NULL && tamRecaudacion>0)
+    {
+        for(int i=0; i<tamRecaudacion; i++)
+        {
+            if(recaudacion[i].isEmpty==0 && strcmp(recaudacion[i].estado, "Refinanciar")==0)
+            {
+                if(flagMaximoImporteRefinanciar==0 || recaudacion[i].importe > flagMaximoImporteRefinanciar)
+                {
+                    flagMaximoImporteRefinanciar=recaudacion[i].importe;
+                }
+                mostrarRecaudacion(recaudacion[i], contribuyente[i]);
+                error=1;
+            }
+        }
+    }
+    return error;
+}
+
+int mostrarRecaudacionesSaldadasMayorMil(eRecaudacion recaudacion[], int tamRecaudacion, eContribuyente contribuyente[], int tamContribuyente)
+{
+    int error=-1;
+    printf("Recaudaciones saldadas mayor a 1000\n");
+    printf("ID-REC   ID-CONTR    MES      TIPO        IMPORT    ESTADO    NOMBRE    APELLIDO    CUIL\n");
+    if(recaudacion!=NULL && tamRecaudacion>0)
+    {
+        for(int i=0; i<tamRecaudacion; i++)
+        {
+            if(recaudacion[i].isEmpty==0 && strcmp(recaudacion[i].estado, "Saldado")==0 && recaudacion[i].importe>1000)
+            {
+                mostrarRecaudacion(recaudacion[i],contribuyente[i]);
+                error=1;
+            }
+        }
+    }
+    return error;
+}
+
+int mostrarDatosContribuyentes(eRecaudacion recaudacion[], int tamRecaudacion, eContribuyente contribuyente[], int tamContribuyente)
+{
+    int error=-1;
+    int respuesta;
+    respuesta = subMenuPreguntar();
+    printf("ID-REC   ID-CONTR    MES      TIPO        IMPORT    ESTADO    NOMBRE    APELLIDO    CUIL\n");
+    if(recaudacion!=NULL && tamRecaudacion>0)
+    {
+        for(int i=0; i<tamRecaudacion; i++)
+        {
+            if(respuesta==1 && strcmp(recaudacion[i].estado,"Refinanciar")==0)
+            {
+                mostrarRecaudacion(recaudacion[i],contribuyente[i]);
+                error=1;
+                //break;
+            }
+            else if(respuesta==2 && strcmp(recaudacion[i].estado,"Saldado")==0)
+            {
+                mostrarRecaudacion(recaudacion[i],contribuyente[i]);
+                error=1;
+                //break;
+            }
+            else if(respuesta==3 && strcmp(recaudacion[i].estado,"Activo")==0)
+            {
+                mostrarRecaudacion(recaudacion[i],contribuyente[i]);
+                error=1;
+                //break;
+            }
+        }
+    }
+    return error;
+}
+
+int subMenuPreguntar()
+{
+    system("cls");
+    int opcion;
+    printf("|------MOSTRAR------|\n");
+    printf("|  1) CONTR REFIN   |\n");
+    printf("|  2) CONTR SALDAD  |\n");
+    printf("|  3) CONTR ACTIVO  |\n");
+    printf("|--------------------|\n\n");
+    printf("----------------------\n");
+    printf("   Ingrese opcion: ");
+    scanf("%d", &opcion);
+    while(opcion<1 || opcion>3)
+    {
+        printf("Reingrese opcion: ");
+        scanf("%d", &opcion);
+    }
+    return opcion;
+}
+
+int mostrarContribuyentesFebrero(eRecaudacion recaudacion[], int tamRecaudacion, eContribuyente contribuyente[], int tamContribuyente)
+{
+    int error=-1;
+    printf("Contribuyentes con recaudaciones en Febrero\n");
+    printf("ID-REC   ID-CONTR    MES      TIPO        IMPORT    ESTADO    NOMBRE    APELLIDO    CUIL\n");
+    if(recaudacion!=NULL && tamRecaudacion>0)
+    {
+        for(int i=0; i<tamRecaudacion; i++)
+        {
+            if(recaudacion[i].isEmpty==0 && recaudacion[i].mes==2 )
+            {
+                mostrarRecaudacion(recaudacion[i],contribuyente[i]);
+                error=1;
+            }
+        }
+    }
+    return error;
+}
+

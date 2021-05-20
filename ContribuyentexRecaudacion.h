@@ -15,4 +15,9 @@ int RefinanciarRecaudacion(eContribuyente contribuyentes[], int tamContribuyente
 int SaldarRecaudacion(eContribuyente contribuyentes[], int tamContribuyente, eRecaudacion recaudacion[], int tamRecaudacion);
 void mostrarRecaudacion(eRecaudacion recaudacion, eContribuyente contribuyente);
 int mostrarRecaudacionesSaldadas(eRecaudacion recaudacion[], int tamRecaudacion, eContribuyente contribuyente[], int tamContribuyente);
+int mostrarRecaudacionesFinanciar(eRecaudacion recaudacion[], int tamRecaudacion, eContribuyente contribuyente[], int tamContribuyente);
+int mostrarRecaudacionesSaldadasMayorMil(eRecaudacion recaudacion[], int tamRecaudacion, eContribuyente contribuyente[], int tamContribuyente);
+int mostrarDatosContribuyentes(eRecaudacion recaudacion[], int tamRecaudacion, eContribuyente contribuyente[], int tamContribuyente);
+int subMenuPreguntar();
+int mostrarContribuyentesFebrero(eRecaudacion recaudacion[], int tamRecaudacion, eContribuyente contribuyente[], int tamContribuyente);
 

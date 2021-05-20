@@ -58,7 +58,7 @@
 	"Contribuyente.h"
 	"Recaudacion.h"
 
-1621481036 source:c:\users\sofia\desktop\parciaaal labo\parciallabi\parcial laboratorio i\contribuyente.c
+1621548213 source:c:\users\sofia\desktop\parciaaal labo\parciallabi\parcial laboratorio i\contribuyente.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -66,20 +66,20 @@
 
 1621388670 c:\users\sofia\desktop\parciaaal labo\parciallabi\parcial laboratorio i\contribuyente.h
 
-1621529542 source:c:\users\sofia\desktop\parciaaal labo\parciallabi\parcial laboratorio i\contribuyentexrecaudacion.c
+1621550416 source:c:\users\sofia\desktop\parciaaal labo\parciallabi\parcial laboratorio i\contribuyentexrecaudacion.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	"ContribuyentexRecaudacion.h"
 
-1621529378 c:\users\sofia\desktop\parciaaal labo\parciallabi\parcial laboratorio i\contribuyentexrecaudacion.h
+1621550414 c:\users\sofia\desktop\parciaaal labo\parciallabi\parcial laboratorio i\contribuyentexrecaudacion.h
 	"Contribuyente.h"
 	"Recaudacion.h"
 
 1621529246 c:\users\sofia\desktop\parciaaal labo\parciallabi\parcial laboratorio i\recaudacion.h
 
-1621545801 source:c:\users\sofia\desktop\parciaaal labo\parciallabi\parcial laboratorio i\main.c
+1621550490 source:c:\users\sofia\desktop\parciaaal labo\parciallabi\parcial laboratorio i\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

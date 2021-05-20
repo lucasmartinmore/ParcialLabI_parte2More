@@ -7,7 +7,8 @@
 //TAMAÑO DE MIS ARRAYS
 #define TAM_CONTRIBUYENTE 50
 #define TAM_RECAUDACION 50
-
+int submenuInformes();
+int subMenuPreguntar();
 int main()
 {
     eContribuyente contribuyentes[TAM_CONTRIBUYENTE];
@@ -119,6 +120,35 @@ int main()
                 printf("    No se cargo ninguna recaudacion Saldada\n");
             }
             break;
+        case 9:
+            switch(submenuInformes())
+            {
+            case 1:
+                if(mostrarRecaudacionesFinanciar(recaudaciones, TAM_RECAUDACION, contribuyentes, TAM_CONTRIBUYENTE)==-1)
+                {
+                    printf("Se debe cargar recaudaciones en estado financiar antes de mostrar\n");
+                }
+                break;
+            case 2:
+                if(mostrarRecaudacionesSaldadasMayorMil(recaudaciones, TAM_RECAUDACION, contribuyentes, TAM_CONTRIBUYENTE)==-1)
+                {
+                    printf("Se debe cargar recaudaciones en estado saldado antes de mostrar\n");
+                }
+                break;
+            case 3:
+                if(mostrarDatosContribuyentes(recaudaciones, TAM_RECAUDACION, contribuyentes, TAM_CONTRIBUYENTE)==-1)
+                {
+                    printf("Se debe cargar recaudaciones antes de mostrar\n");
+                }
+                break;
+            case 4:
+                if(mostrarContribuyentesFebrero(recaudaciones, TAM_RECAUDACION, contribuyentes, TAM_CONTRIBUYENTE)==-1)
+                {
+                    printf("Se debe cargar recaudaciones mes de Febrero antes de mostrar\n");
+                }
+                break;
+            }
+            break;
         }
         system("pause");
 
@@ -126,3 +156,25 @@ int main()
     while(seguirPrincipal==0);
     return 0;
 }
+
+int submenuInformes()
+{
+    system("cls");
+    int opcion;
+    printf("|------INFORMES------|\n");
+    printf("|  1) CONTR REFIN    |\n");
+    printf("|  2) RECAUD SALD    |\n");
+    printf("|  3) RECAUD USUAR   |\n");
+    printf("|  4) RECAUD FEBRER  |\n");
+    printf("|--------------------|\n\n");
+    printf("----------------------\n");
+    printf("   Ingrese opcion: ");
+    scanf("%d", &opcion);
+    while(opcion<1 || opcion>4)
+    {
+        printf("Reingrese opcion: ");
+        scanf("%d", &opcion);
+    }
+    return opcion;
+}
+
